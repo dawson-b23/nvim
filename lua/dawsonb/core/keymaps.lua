@@ -21,7 +21,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- next greatest remap ever : asbjornHaland
 -- plus reg / sys clip for cpy
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- same but for deleting to void reg
@@ -33,7 +33,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- never press Q lol
 vim.keymap.set("n", "Q", "<nop>")
 
--- global file search 
+-- global file search
 --vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 --for LSP
@@ -49,20 +49,19 @@ vim.keymap.set("n", "Q", "<nop>")
 -- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "replace selected word in file"})
 
 -- makes files executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {desc = "makes file exectuable"} ,{ silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "makes file exectuable" }, { silent = true })
 
-
-vim.keymap.set("n", "<leader><leader>", "<cmd>so<CR>", {desc = "execute so cmd"}) 
+vim.keymap.set("n", "<leader><leader>", "<cmd>so<CR>", { desc = "execute so cmd" })
 
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v", {desc = "split window vertically"}) -- split vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s", {desc = "split window horizontally"}) -- split horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>-", {desc = "split window equal size"})  -- split windows equal size
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", {desc = "close split window"})  -- close current split
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" }) -- split vertically
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" }) -- split horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>-", { desc = "split window equal size" }) -- split windows equal size
+vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "close split window" }) -- close current split
 
 -- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", {desc = "open new tab"}) -- open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", {desc = "close current tab"})  --  close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", {desc = "goto next tab"})  -- goto next tab
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", {desc = "goto prev tab"})  -- goto previous tab
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", {desc = "open buf in new tab"})  -- open current buffer in new tab 
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "open new tab" }) -- open new tab
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "close current tab" }) --  close current tab
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "goto next tab" }) -- goto next tab
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "goto prev tab" }) -- goto previous tab
+vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "open buf in new tab" }) -- open current buffer in new tab
