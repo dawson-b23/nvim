@@ -35,6 +35,7 @@ return {
 				-- 	"clangd",
 				"cmake",
 				"rust_analyzer",
+				"ruff_lsp",
 			},
 		})
 
@@ -47,6 +48,7 @@ return {
 				--	"clang-format",
 				"eslint_d",
 				--	"cpplint",
+				"ruff",
 			},
 		})
 	end,
