@@ -36,6 +36,7 @@ return {
 				"cmake",
 				"rust_analyzer",
 				"ruff_lsp",
+				"hyprls",
 			},
 		})
 
