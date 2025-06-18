@@ -1,7 +1,9 @@
 local opt = vim.opt
 
+vim.opt.guicursor = ""
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.opt.nu = true
 
 
 -- Hide deprecation warnings
@@ -49,5 +51,8 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "80"
 -- turn off swapfile
 opt.swapfile = false

@@ -7,8 +7,8 @@ return {
       style = "night",
       transparent = false,
       styles = {
-        sidebars = transparent and "transparent" or "dark",
-        floats = transparent and "transparent" or "dark",
+        sidebars = "transparent", --or "dark",
+        floats = "transparent", --or "dark",
       },
     })
 
