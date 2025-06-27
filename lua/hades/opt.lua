@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-vim.opt.guicursor = ""
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.opt.nu = true
@@ -20,7 +19,7 @@ opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
-opt.list = true -- Show some invisible characters (tabs...
+--opt.list = true -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.relativenumber = true -- Relative line numbers
