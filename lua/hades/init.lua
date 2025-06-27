@@ -14,7 +14,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "hades.plugins" }, }, {
+require("lazy").setup({ { import = "hades.plugins" }, { import = "hades.plugins.lsp" } }, {
   checker = {
     enabled = true,
     notify = false,
@@ -23,7 +23,6 @@ require("lazy").setup({ { import = "hades.plugins" }, }, {
     notify = false,
   },
 })
-
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('hades', {})
@@ -45,3 +44,4 @@ autocmd('TextYankPost', {
         })
     end,
 })
+
