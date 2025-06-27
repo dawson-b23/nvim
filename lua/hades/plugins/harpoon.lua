@@ -11,6 +11,10 @@ return {
       harpoon:list():add()
     end, { desc = "add file to harpoon" })
     
+    vim.keymap.set("n", "<leader>hd", function()
+      harpoon:list():remove()
+    end, { desc = "remove file from harpoon" })
+
     -- set registers 
     vim.keymap.set("n", "<leader>hm", function()
       harpoon:list():replace_at(1)
@@ -34,22 +38,22 @@ return {
     vim.keymap.set("n", "<leader>jj", function()
       harpoon:list():next()
     end, { desc = "Jump to next harpoon reg" })
-    vim.keymap.set("n", "<leader>kk", function()
+    vim.keymap.set("n", "<leader>jk", function()
       harpoon:list():prev()
     end, { desc = "Jump to prev harpoon reg" })
 
-    vim.keymap.set("n", "<leader><C-m>", function()
+    vim.keymap.set("n", "<leader>ja", function()
       harpoon:list():select(1)
     end, { desc = "Jump to harpoon reg 1" })
-    vim.keymap.set("n", "<leader><C-t>", function()
+    vim.keymap.set("n", "<leader>js", function()
       harpoon:list():select(2)
-    end, { desc = "Jump to harpoon reg 1" })
-    vim.keymap.set("n", "<leader><C-n>", function()
+    end, { desc = "Jump to harpoon reg 2" })
+    vim.keymap.set("n", "<leader>jq", function()
       harpoon:list():select(3)
-    end, { desc = "Jump to harpoon reg 1" })
-    vim.keymap.set("n", "<leader><C-s>", function()
+    end, { desc = "Jump to harpoon reg 3" })
+    vim.keymap.set("n", "<leader>jw", function()
       harpoon:list():select(4)
-    end, { desc = "Jump to harpoon reg 1" })
+    end, { desc = "Jump to harpoon reg 4" })
 
 
   end,
