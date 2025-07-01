@@ -24,6 +24,7 @@ return {
       ensure_installed = {
         "json",
         "yaml",
+        "toml",
         "html",
         "css",
         "markdown",
@@ -37,6 +38,7 @@ return {
         "c",
         "python",
         "rust",
+        "go",
       },
       incremental_selection = {
         enable = true,
