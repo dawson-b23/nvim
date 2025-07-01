@@ -143,8 +143,11 @@ return {
 
       -- Set menu
       dashboard.section.buttons.val = {
-        dashboard.button('f', '  > Find file', '<cmd>Telescope find_files<cr>'),
-        dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
+        dashboard.button('f', '  > Telescope Find File', '<cmd>Telescope find_files<cr>'),
+        dashboard.button('g', '  > Telescope Live Grep', '<cmd>Telescope live_grep<cr>'),
+        dashboard.button('l', '  > Lazy', '<cmd>Lazy<cr>'),
+        dashboard.button('m', '  > Lazy', '<cmd>Mason<cr>'),
+        dashboard.button('q', '  > Quit NVIM', '<cmd>qa<CR>'),
       }
 
       -- Send config to alpha
