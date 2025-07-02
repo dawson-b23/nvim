@@ -1,5 +1,6 @@
 local map = vim.keymap.set
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+map("n", "<leader>pv", '<cmd>wq<cr>')
+map("n", "<leader>qq", '<cmd>q!<cr>')
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
