@@ -14,8 +14,8 @@ return {
         lualine_c = {
           {
             "harpoon2",
-            indicators = { "a", "s", "q", "w" },
-            active_indicators = { "[A]", "[S]", "[Q]", "[W]" },
+            indicators = { "q", "w", "e", "r" },
+            active_indicators = { "[A]", "[W]", "[E]", "[R]" },
             color_active = { fg = "#00ff00" },
             _separator = " ",
           },

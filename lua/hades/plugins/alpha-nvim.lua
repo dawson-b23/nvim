@@ -30,16 +30,22 @@ return {
 
       -- Set header
       dashboard.section.header.val = {
-        '                                  __',
-        '     ___     ___    ___   __  __ /\\_\\    ___ ___',
-        '    / _ `\\  / __`\\ / __`\\/\\ \\ /\\ \\/\\ \\  / __` __`\\',
-        '   /\\ \\/\\ \\/\\  __//\\ \\_\\ \\ \\ \\_/ |\\ \\ \\/\\ \\/\\ \\/\\ \\',
-        '   \\ \\_\\ \\_\\ \\____\\ \\____/\\ \\___/  \\ \\_\\ \\_\\ \\_\\ \\_\\',
-        '    \\/_/\\/_/\\/____/\\/___/  \\/__/    \\/_/\\/_/\\/_/\\/_/',
-        '',
-        '',
-      }
-
+	"                                   ",
+	"                                   ",
+	"                                   ",
+	"   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+	"    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+	"          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+	"           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+	"          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+	"   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+	"  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+	" ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+	" ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
+	"      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
+	"       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+	"                                   ",
+}
       local quotes = {
         {
           'The universe is, and we are.',
@@ -144,9 +150,11 @@ return {
       -- Set menu
       dashboard.section.buttons.val = {
         dashboard.button('f', '  > Telescope Find File', '<cmd>Telescope find_files<cr>'),
-        dashboard.button('g', '  > Telescope Live Grep', '<cmd>Telescope live_grep<cr>'),
-        dashboard.button('l', '  > Lazy', '<cmd>Lazy<cr>'),
-        dashboard.button('m', '  > Lazy', '<cmd>Mason<cr>'),
+        dashboard.button('g', '  > Telescope Live Grep', '<cmd>Telescope live_grep<cr>'),
+        dashboard.button('e', '  > Open Explorer', '<cmd>NvimTreeToggle<CR>'),
+        dashboard.button('c', '  > Open Config', '<cmd>edit ~/.config/nvim/<CR>'),
+        dashboard.button('l', '  > Lazy', '<cmd>Lazy<cr>'),
+        dashboard.button('m', '󱊓  > Mason', '<cmd>Mason<cr>'),
         dashboard.button('q', '  > Quit NVIM', '<cmd>qa<CR>'),
       }
 
