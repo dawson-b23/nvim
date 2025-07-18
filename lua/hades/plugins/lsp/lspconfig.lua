@@ -23,7 +23,7 @@ return {
       callback = function(ev)
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf, silent = true }
+        local opts = { buffer = ev.buf, silent = false }
 
         -- set keybinds
         opts.desc = "Show LSP references"
