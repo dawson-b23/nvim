@@ -20,19 +20,6 @@ vim.g.deprecation_warnings = false
 
 -- clipboard for ssh
 opt.clipboard = "unnamedplus"
-if os.getenv("SSH_CONNECTION") then
-    vim.g.clipboard = {
-        name = "OSC 52",
-        copy = {
-            ["+"] = {"/usr/bin/tee", "/dev/tty"},
-            ["*"] = {"/usr/bin/tee", "/dev/tty"},
-        },
-        paste = {
-            ["+"] = {"/bin/cat"},
-            ["*"] = {"/bin/cat"},
-        },
-    }
-end
 
 -- colors and style
 opt.termguicolors = true
