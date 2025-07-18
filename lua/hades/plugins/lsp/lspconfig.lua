@@ -13,7 +13,7 @@ return {
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
 
-    -- import cmp-nvim-lsp plugin
+   -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
     local keymap = vim.keymap -- for conciseness
@@ -27,10 +27,10 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        keymap.set("n", "lR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        keymap.set("n", "lr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
         opts.desc = "Go to declaration"
-        keymap.set("n", "lD", vim.lsp.buf.declaration, opts) -- go to declaration
+        keymap.set("n", "le", vim.lsp.buf.declaration, opts) -- go to declaration
 
         opts.desc = "Show LSP definitions"
         keymap.set("n", "ld", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
@@ -38,11 +38,14 @@ return {
         opts.desc = "Show LSP implementations"
         keymap.set("n", "li", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
+        opts.desc = "See available code actions"
+        keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
         opts.desc = "Show LSP type definitions"
         keymap.set("n", "lt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
         opts.desc = "Restart LSP"
-        keymap.set("n", "<leader>ls", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+        keymap.set("n", "<leader>ll", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
     })
 
@@ -56,6 +59,30 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
-
+    mason_lspconfig.setup({handlers = { -- mason_lspconfig.setup_handlers doesn't exist but mason_lspconfig.setup({handlers = {}}) exists
+      -- default handler for installed servers
+      function(server_name)
+        lspconfig[server_name].setup({
+          capabilities = capabilities,
+        })
+      end,
+      ["lua_ls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["lua_ls"].setup({
+          capabilities = capabilities,
+          settings = {
+            Lua = {
+              -- make the language server recognize "vim" global
+              diagnostics = {
+                globals = { "vim" },
+              },
+              completion = {
+                callSnippet = "Replace",
+              },
+            },
+          },
+        })
+      end,
+    }})
   end,
 }
