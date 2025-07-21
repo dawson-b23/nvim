@@ -61,11 +61,19 @@
 --		vim.cmd("colorscheme material-darker")
 --	end,
 --}
+--return {
+--	"Mofiqul/dracula.nvim",
+--	priority = 1000,
+--	lazy = false,
+--	config = function()
+--		vim.cmd("colorscheme dracula")
+--	end,
+--}
 return {
-	"Mofiqul/dracula.nvim",
+	"catppuccin/nvim",
+	name = "catppuccin",
 	priority = 1000,
-	lazy = false,
 	config = function()
-		vim.cmd("colorscheme dracula")
+		vim.cmd("colorscheme catppuccin-mocha")
 	end,
 }
