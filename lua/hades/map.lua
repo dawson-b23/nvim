@@ -1,6 +1,6 @@
 local map = vim.keymap.set
-map("n", "<leader>pv", '<cmd>wq<cr>')
-map("n", "<leader>qq", '<cmd>q!<cr>')
+-- map("n", "<leader>pv", '<cmd>wq<cr>')
+map("n", "<leader>qq", "<cmd>q!<cr>", { desc = "Force Quit" })
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
@@ -33,25 +33,23 @@ map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
-
 -- windows
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 
 -- tabs
-map("n", "<leader>tl", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-map("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close Other Tabs" })
-map("n", "<leader>th", "<cmd>tabprev<cr>", { desc = "Prev Tab" })
-map("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "New Tab" })
+-- map("n", "<leader>tl", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+-- map("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close Other Tabs" })
+-- map("n", "<leader>th", "<cmd>tabprev<cr>", { desc = "Prev Tab" })
+-- map("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "New Tab" })
 
 -- native snippets. only needed on < 0.11, as 0.11 creates these by default
 if vim.fn.has("nvim-0.11") == 0 then
-  map("s", "<Tab>", function()
-    return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
-  end, { expr = true, desc = "Jump Next" })
-  map({ "i", "s" }, "<S-Tab>", function()
-    return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
-  end, { expr = true, desc = "Jump Previous" })
+	map("s", "<Tab>", function()
+		return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+	end, { expr = true, desc = "Jump Next" })
+	map({ "i", "s" }, "<S-Tab>", function()
+		return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+	end, { expr = true, desc = "Jump Previous" })
 end
-
