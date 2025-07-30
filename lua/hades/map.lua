@@ -1,4 +1,8 @@
 local map = vim.keymap.set
+
+-- i know im a bitch but this shit annoys me
+map("n", "q:", "<Nop>", { noremap = true })
+
 -- map("n", "<leader>pv", '<cmd>wq<cr>')
 map("n", "<leader>qq", "<cmd>q!<cr>", { desc = "Force Quit" })
 
