@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "grep": {
+      "url": "https://mcp.grep.app"
+    },
+    "deepwiki": {
+      "url": "https://mcp.deepwiki.com/mcp"
+    }
+  }
+}
