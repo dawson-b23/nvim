@@ -1,11 +1,11 @@
 local opt = vim.opt
 
--- leader 
+-- leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- line num
-vim.opt.nu = true
+opt.nu = true
 opt.number = true -- Print line number
 opt.relativenumber = true -- Relative line numbers
 
@@ -53,7 +53,7 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
-vim.opt.updatetime = 50
+opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
 
