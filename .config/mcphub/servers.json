@@ -5,6 +5,12 @@
     },
     "deepwiki": {
       "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time"
+      ]
     }
   }
 }

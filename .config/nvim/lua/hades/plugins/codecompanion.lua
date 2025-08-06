@@ -8,7 +8,22 @@ return {
 	config = function()
 		require("codecompanion").setup({
 			adapters = {
-				ollama = function()
+				ollama_gpt = function()
+					return require("codecompanion.adapters").extend("ollama", {
+						env = {
+							url = "http://100.125.105.38:11434", -- Replace with your Tailscale hostname/IP
+						},
+						schema = {
+							model = {
+								default = "gpt-oss:20b", -- Ensure this model is pulled on the server
+							},
+							num_ctx = {
+								default = 20000, -- Context window; adjust if needed
+							},
+						},
+					})
+				end,
+				ollama_devstral = function()
 					return require("codecompanion.adapters").extend("ollama", {
 						env = {
 							url = "http://100.125.105.38:11434", -- Replace with your Tailscale hostname/IP
@@ -23,16 +38,46 @@ return {
 						},
 					})
 				end,
+				ollama_qwen3 = function()
+					return require("codecompanion.adapters").extend("ollama", {
+						env = {
+							url = "http://100.125.105.38:11434", -- Replace with your Tailscale hostname/IP
+						},
+						schema = {
+							model = {
+								default = "qwen3:30b", -- Ensure this model is pulled on the server
+							},
+							num_ctx = {
+								default = 20000, -- Context window; adjust if needed
+							},
+						},
+					})
+				end,
+				ollama_qwen3_coder = function()
+					return require("codecompanion.adapters").extend("ollama", {
+						env = {
+							url = "http://100.125.105.38:11434", -- Replace with your Tailscale hostname/IP
+						},
+						schema = {
+							model = {
+								default = "qwen3-coder:30b", -- Ensure this model is pulled on the server
+							},
+							num_ctx = {
+								default = 20000, -- Context window; adjust if needed
+							},
+						},
+					})
+				end,
 			},
 			strategies = {
 				chat = {
-					adapter = "ollama",
+					adapter = "ollama_qwen3_coder",
 				},
 				inline = {
-					adapter = "ollama",
+					adapter = "ollama_qwen3_coder",
 				},
 				agent = {
-					adapter = "ollama",
+					adapter = "ollama_qwen3_coder",
 				},
 			},
 			extensions = {
